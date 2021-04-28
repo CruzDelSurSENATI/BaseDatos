@@ -135,3 +135,36 @@ DireccionNotario  varchar(250) NOT NULL,
 Fecha varchar(10) NOT NULL,
 Observaciones varchar(max)
 )
+
+go
+CREATE TABLE Tbl_Boleta(
+IdPasajero varchar(5) NOT NULL,
+FOREIGN KEY (IdPasajero) REFERENCES Tbl_Pasajero(IdPasajero),
+NombrePasajero varchar(250)NOT NULL,
+MetodoPago varchar(20) NOT NULL,
+MontoPagar varchar(100) NOT NULL,
+Fecha varchar(10) NOT NULL,
+FechaEmbarco varchar(10) NOT NULL,
+DNI char(8) NOT NULL,
+Correo varchar(250) NOT NULL,
+Direccion varchar(250) NOT NULL,
+NumeroAsiento varchar(2) NOT NULL,
+)
+
+go
+CREATE TABLE Tbl_Contable(
+GananciaDiaria char(10),
+PerdidaDiaria char(10),
+CantidadBoletosVendidos char(9),
+CantidadSalidas char(10),
+CantidadPasajeros char(10),
+BalanceDiario char(10),
+BalanceMensual char(10)
+)
+
+go
+CREATE TABLE Tbl_PagoEmpleado(
+IdEmpleado varchar(5),
+CantidadPagar char(10),
+Estado varchar(max)
+)
